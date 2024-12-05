@@ -20,7 +20,7 @@
   .nav-links {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 40px;
     margin: 0;
     padding: 0;
   }
@@ -28,7 +28,13 @@
   .nav-links li a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 24px;
+  }
+
+  .nav-links li a:hover {
+    border-top: 2px solid #FFCC00; /* Ajoute une bordure au-dessus du lien au survol */
+    padding-top: 5px; /* Ajoute un peu d'espace entre le texte et la bordure */
+  
   }
   
   .nav-links li a.active {

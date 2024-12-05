@@ -1,0 +1,44 @@
+
+.campaign-menu {
+    margin-top: 30px;
+}
+.navbar {
+  color: white;
+  padding: 10px 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li a {
+    background-color: #584F2E;
+    color: #FFCC00;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+
+  .nav-links li a:hover {
+    box-shadow: 5px 5px #E27F83 !important;
+}
+  
+  .nav-links li a.active {
+    text-decoration: underline;
+  }
+  
