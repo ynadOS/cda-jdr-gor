@@ -1,0 +1,101 @@
+/* Style général de la page */
+body {
+    background-color: #584F2E;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  h1 {
+    color: #E27F83;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+
+  }
+  
+  /* Style du conteneur du formulaire */
+  form {
+    background-color: #584F2E;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    box-sizing: border-box;
+    
+  }
+  
+  /* Style des labels */
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #FFCC00;
+  }
+  
+  /* Style des champs de saisie */
+  input[type="text"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #fafafa;
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  /* Effet au focus des champs */
+  input[type="text"]:focus,
+  textarea:focus,
+  select:focus {
+    border-color: #E27F83;
+    outline: none;
+    background-color: #e6f0ff;
+  }
+  
+  /* Style du bouton */
+  button {
+    background-color: #E27F83;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Effet au survol du bouton */
+  button:hover {
+    background-color: #003d80;
+  }
+  
+  /* Style des erreurs ou message de validation */
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Espacement du texte au bas du formulaire */
+  p {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+  }
+  

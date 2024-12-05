@@ -1,1 +1,29 @@
-<p>createcampaignpage works!</p>
+<h1>Fill all the fields to create a new campaign!</h1>
+<div class="container">
+
+    <form>
+      <label for="nom">Nom de la campagne :</label>
+      <input type="text" id="nom" name="nom" required>
+      
+      <label for="description">Description :</label>
+      <textarea id="description" name="description" required></textarea>
+      
+      <label for="univers">Univers :</label>
+      <select id="univers" name="univers" required>
+        <option value="Cyberpunk">Cyberpunk</option>
+        <option value="Médiéval Fantastique">Médiéval Fantastique</option>
+      </select>
+      
+      <label for="contexte">Contexte :</label>
+      <input type="text" id="contexte" name="contexte" required>
+      
+      <label for="etat_avancement">État d'avancement :</label>
+      <select id="etat_avancement" name="etat_avancement" required>
+        <option value="en cours">En cours</option>
+        <option value="terminée">Terminée</option>
+        <option value="brouillon">Brouillon</option>
+      </select>
+      
+      <button type="submit">Créer la campagne</button>
+    </form>
+</div>
