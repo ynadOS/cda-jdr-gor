@@ -1,7 +1,7 @@
 <!-- campaign-menu.component.html -->
-<div class="dropdown">
-    <button>Display campaigns</button>
-    <button>Create campaigns</button>
+<ul class="nav-links">
+    <li><a routerLink="/campaign/display" routerLinkActive="active">Display campaigns</a></li>
+    <li><a routerLink="/campaign/create" routerLinkActive="active">Create a campaign</a></li>
+  </ul>
 
-  </div>
-  
+  <router-outlet></router-outlet>
