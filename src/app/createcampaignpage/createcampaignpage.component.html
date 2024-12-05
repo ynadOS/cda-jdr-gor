@@ -2,28 +2,30 @@
 <div class="container">
 
     <form>
-      <label for="nom">Nom de la campagne :</label>
-      <input type="text" id="nom" name="nom" required>
+      <label for="name">Campaign Name:</label>
+      <input type="text" id="name" name="name" required>
       
-      <label for="description">Description :</label>
+      <label for="description">Description:</label>
       <textarea id="description" name="description" required></textarea>
       
-      <label for="univers">Univers :</label>
-      <select id="univers" name="univers" required>
+      <label for="universe">Universe:</label>
+      <select id="universe" name="universe" required>
         <option value="Cyberpunk">Cyberpunk</option>
-        <option value="Médiéval Fantastique">Médiéval Fantastique</option>
+        <option value="Medieval Fantasy">Medieval Fantasy</option>
+        <option value="Post-apocalyptic">Post-apocalyptic</option>
+        <option value="Sci-Fi">Sci-Fi</option>
       </select>
       
-      <label for="contexte">Contexte :</label>
-      <input type="text" id="contexte" name="contexte" required>
+      <label for="context">Context:</label>
+      <input type="text" id="context" name="context" required>
       
-      <label for="etat_avancement">État d'avancement :</label>
-      <select id="etat_avancement" name="etat_avancement" required>
-        <option value="en cours">En cours</option>
-        <option value="terminée">Terminée</option>
-        <option value="brouillon">Brouillon</option>
+      <label for="progress_status">Progress Status:</label>
+      <select id="progress_status" name="progress_status" required>
+        <option value="ongoing">Ongoing</option>
+        <option value="completed">Completed</option>
+        <option value="draft">Draft</option>
       </select>
       
-      <button type="submit">Créer la campagne</button>
+      <button type="submit">Create Campaign</button>
     </form>
 </div>

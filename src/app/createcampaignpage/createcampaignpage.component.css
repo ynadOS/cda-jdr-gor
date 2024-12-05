@@ -9,9 +9,7 @@ body {
     height: 100vh;
   }
 
-  h1 {
-    color: #E27F83;
-  }
+
 
   .container {
     display: flex;

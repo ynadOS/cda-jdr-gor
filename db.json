@@ -1,86 +1,85 @@
 {
-    "campagnes": [
+  "campaigns": [
       {
-        "id": 1,
-        "nom": "Aventure dans la CDA",
-        "description": "Une campagne dans un univers cyberpunk où les joueurs naviguent entre le monde réel et la CDA.",
-        "univers": "Cyberpunk",
-        "contexte": "Futur dystopique où la technologie et la réalité virtuelle dominent.",
-        "quêtes": {
-          "principales": [
-            {
-              "id": 1,
-              "nom": "Infiltration du réseau",
-              "description": "Infiltrer le réseau de données d'une corporation corrompue pour obtenir des informations sensibles."
-            },
-            {
-              "id": 2,
-              "nom": "Sauvée par la technologie",
-              "description": "Utiliser la technologie pour sauver un allié piégé dans une réalité virtuelle défectueuse."
-            }
-          ],
-          "secondaires": [
-            {
-              "id": 1,
-              "nom": "Espionnage de rue",
-              "description": "Surveiller une rue remplie de hackers et d'agents de sécurité."
-            }
-          ]
-        },
-        "etat_avancement": "en cours",
-        "personnages_joueurs": [
-          {
-            "id": 1,
-            "nom": "Neo",
-            "classe": "Hacker",
-            "niveau": 5
+          "id": 1,
+          "name": "Adventure in the CDA",
+          "description": "A campaign in a cyberpunk universe where players navigate between the real world and the CDA.",
+          "universe": "Cyberpunk",
+          "context": "A dystopian future where technology and virtual reality dominate.",
+          "quests": {
+              "main": [
+                  {
+                      "id": 1,
+                      "name": "Network Infiltration",
+                      "description": "Infiltrate the data network of a corrupt corporation to obtain sensitive information."
+                  },
+                  {
+                      "id": 2,
+                      "name": "Saved by Technology",
+                      "description": "Use technology to rescue an ally trapped in a defective virtual reality."
+                  }
+              ],
+              "side": [
+                  {
+                      "id": 1,
+                      "name": "Street Espionage",
+                      "description": "Monitor a street filled with hackers and security agents."
+                  }
+              ]
           },
-          {
-            "id": 2,
-            "nom": "Trinity",
-            "classe": "Guerrière",
-            "niveau": 4
-          }
-        ]
+          "progress_status": "ongoing",
+          "player_characters": [
+              {
+                  "id": 1,
+                  "name": "Neo",
+                  "class": "Hacker",
+                  "level": 5
+              },
+              {
+                  "id": 2,
+                  "name": "Trinity",
+                  "class": "Warrior",
+                  "level": 4
+              }
+          ]
       },
       {
-        "id": 2,
-        "nom": "Les Mystères du Royaume",
-        "description": "Une campagne médiévale fantastique pleine de magie, de créatures mythologiques et de mystères à résoudre.",
-        "univers": "Médiéval Fantastique",
-        "contexte": "Un royaume magique où les aventuriers explorent des donjons et affrontent des créatures surnaturelles.",
-        "quêtes": {
-          "principales": [
-            {
-              "id": 1,
-              "nom": "Le secret des anciens",
-              "description": "Découvrir l'origine mystérieuse d'un artefact ancien qui pourrait changer le cours de l'histoire."
-            }
-          ],
-          "secondaires": [
-            {
-              "id": 1,
-              "nom": "Chasseur de bêtes",
-              "description": "Chasser un loup-garou qui terrorise les villages alentours."
-            }
-          ]
-        },
-        "etat_avancement": "terminée",
-        "personnages_joueurs": [
-          {
-            "id": 1,
-            "nom": "Aragorn",
-            "classe": "Ranger",
-            "niveau": 6
+          "id": 2,
+          "name": "The Mysteries of the Kingdom",
+          "description": "A medieval fantasy campaign full of magic, mythological creatures, and mysteries to solve.",
+          "universe": "Medieval Fantasy",
+          "context": "A magical kingdom where adventurers explore dungeons and face supernatural creatures.",
+          "quests": {
+              "main": [
+                  {
+                      "id": 1,
+                      "name": "The Secret of the Ancients",
+                      "description": "Uncover the mysterious origin of an ancient artifact that could change the course of history."
+                  }
+              ],
+              "side": [
+                  {
+                      "id": 1,
+                      "name": "Beast Hunter",
+                      "description": "Hunt down a werewolf terrorizing nearby villages."
+                  }
+              ]
           },
-          {
-            "id": 2,
-            "nom": "Gandalf",
-            "classe": "Magicien",
-            "niveau": 8
-          }
-        ]
+          "progress_status": "completed",
+          "player_characters": [
+              {
+                  "id": 1,
+                  "name": "Aragorn",
+                  "class": "Ranger",
+                  "level": 6
+              },
+              {
+                  "id": 2,
+                  "name": "Gandalf",
+                  "class": "Wizard",
+                  "level": 8
+              }
+          ]
       }
-    ]
-  }
-  
+  ]
+}

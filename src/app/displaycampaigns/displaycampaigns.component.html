@@ -1,1 +1,30 @@
-<p>displaycampaigns works!</p>
+
+<div class="campaign-card">
+    
+    <div *ngFor="let campaign of campaigns">
+        <h1>{{ campaign.name }}</h1>
+        <p>{{ campaign.description }}</p>
+        <p><strong>Universe:</strong> {{ campaign.universe }}</p>
+        <p><strong>Context:</strong> {{ campaign.context }}</p>
+        <p><strong>State:</strong> {{ campaign.progress_status }}</p>
+        
+        <div *ngIf="campaign.quests.main && campaign.quests.main.length > 0">
+          <p><strong>Main Quests:</strong></p>
+          <ul>
+            <li *ngFor="let quest of campaign.quests.main">
+              <p><strong>{{ quest.name }}</strong>: {{ quest.description }}</p>
+            </li>
+          </ul>
+        </div>
+      
+        <div *ngIf="campaign.quests.side && campaign.quests.side.length > 0">
+          <p><strong>Side Quests:</strong></p>
+          <ul>
+            <li *ngFor="let quest of campaign.quests.side">
+              <p><strong>{{ quest.name }}</strong>: {{ quest.description }}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+</div>
+  

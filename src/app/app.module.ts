@@ -7,6 +7,7 @@ import { AboutComponent } from './about/about.component';  // Composant About (e
 import { RouterModule } from '@angular/router';  // Pour gérer le routage
 import { routes } from './app.routes';  // Vos routes
 
+
 @NgModule({
   declarations: [
     AppComponent,  // Déclarez tous vos composants ici
