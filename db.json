@@ -1,0 +1,86 @@
+{
+    "campagnes": [
+      {
+        "id": 1,
+        "nom": "Aventure dans la CDA",
+        "description": "Une campagne dans un univers cyberpunk où les joueurs naviguent entre le monde réel et la CDA.",
+        "univers": "Cyberpunk",
+        "contexte": "Futur dystopique où la technologie et la réalité virtuelle dominent.",
+        "quêtes": {
+          "principales": [
+            {
+              "id": 1,
+              "nom": "Infiltration du réseau",
+              "description": "Infiltrer le réseau de données d'une corporation corrompue pour obtenir des informations sensibles."
+            },
+            {
+              "id": 2,
+              "nom": "Sauvée par la technologie",
+              "description": "Utiliser la technologie pour sauver un allié piégé dans une réalité virtuelle défectueuse."
+            }
+          ],
+          "secondaires": [
+            {
+              "id": 1,
+              "nom": "Espionnage de rue",
+              "description": "Surveiller une rue remplie de hackers et d'agents de sécurité."
+            }
+          ]
+        },
+        "etat_avancement": "en cours",
+        "personnages_joueurs": [
+          {
+            "id": 1,
+            "nom": "Neo",
+            "classe": "Hacker",
+            "niveau": 5
+          },
+          {
+            "id": 2,
+            "nom": "Trinity",
+            "classe": "Guerrière",
+            "niveau": 4
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "nom": "Les Mystères du Royaume",
+        "description": "Une campagne médiévale fantastique pleine de magie, de créatures mythologiques et de mystères à résoudre.",
+        "univers": "Médiéval Fantastique",
+        "contexte": "Un royaume magique où les aventuriers explorent des donjons et affrontent des créatures surnaturelles.",
+        "quêtes": {
+          "principales": [
+            {
+              "id": 1,
+              "nom": "Le secret des anciens",
+              "description": "Découvrir l'origine mystérieuse d'un artefact ancien qui pourrait changer le cours de l'histoire."
+            }
+          ],
+          "secondaires": [
+            {
+              "id": 1,
+              "nom": "Chasseur de bêtes",
+              "description": "Chasser un loup-garou qui terrorise les villages alentours."
+            }
+          ]
+        },
+        "etat_avancement": "terminée",
+        "personnages_joueurs": [
+          {
+            "id": 1,
+            "nom": "Aragorn",
+            "classe": "Ranger",
+            "niveau": 6
+          },
+          {
+            "id": 2,
+            "nom": "Gandalf",
+            "classe": "Magicien",
+            "niveau": 8
+          }
+        ]
+      }
+    ]
+  }
+  

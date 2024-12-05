@@ -1,23 +1,30 @@
-.navbar {
+@import url('https://fonts.googleapis.com/css2?family=Beiruti:wght@200..900&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-    color: white;
-    padding: 10px 20px;
-  }
-  
-  .container {
+.navbar {
+  color: white;
+  padding: 10px 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   
   .logo {
-    font-size: 24px;
+    font-family: "Bodono Moda SC", serif ;
+    padding: 20px 0;
+    font-size: 50px;
     font-weight: bold;
     color: white;
     text-decoration: none;
   }
   
   .nav-links {
+    display: flex;
+    justify-content: center;
     list-style: none;
     display: flex;
     gap: 15px;
