@@ -1,0 +1,11 @@
+.container {
+
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    background-color: #584E2E;
+    padding: 20px;
+
+}
