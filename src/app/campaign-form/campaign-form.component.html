@@ -26,8 +26,12 @@
         <!-- <input id="universe" formControlName="universe" /> -->
         <select id="universe" formControlName="universe">
           <option value="cyberpunk">Cyberpunk</option>
-          <option value="fantastic">Fantastic</option>
-          <option value="medfan">MedFan</option>
+          <option value="gothorror">Gothic Horror</option>
+          <option value="medfan">Med-Fan</option>
+          <option value="postapo">Post-Apocalyptic</option>
+          <option value="steampunk">Steampunk</option>
+
+
         </select>
         <div *ngIf="campaignForm.get('universe')?.invalid && campaignForm.get('universe')?.touched">
           L'univers est requis.

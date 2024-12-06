@@ -209,26 +209,6 @@
       ]
     },
     {
-      "id": "79ff",
-      "name": "fdsq",
-      "description": "fdsq",
-      "universe": "cyberpunk",
-      "context": "fdsq",
-      "progressStatus": "completed",
-      "playerCharacters": [
-        {
-          "name": "sqfdsq",
-          "class": "fdsq",
-          "level": 1
-        },
-        {
-          "name": "dsq",
-          "class": "fdsq",
-          "level": 1
-        }
-      ]
-    },
-    {
       "id": "3aa0",
       "name": "Campagne test",
       "description": "blablalba",
@@ -246,6 +226,22 @@
           "id": 2,
           "name": "Sokha",
           "class": "MULLE",
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "e59a",
+      "name": "SODANY",
+      "description": "jkslqmfjdkslm",
+      "universe": "medfan",
+      "context": "test",
+      "progress_status": "completed",
+      "player_characters": [
+        {
+          "id": 1,
+          "name": "Dany",
+          "class": "Druide",
           "level": 1
         }
       ]

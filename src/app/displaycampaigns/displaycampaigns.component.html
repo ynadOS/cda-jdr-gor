@@ -1,27 +1,39 @@
 
-
-    <div class="campaign-card">
-        
-        <div class= "card" *ngFor="let campaign of campaigns">
-              <h2>{{ campaign.name }}</h2>
-              <p><strong>Description:</strong> {{ campaign.description }}</p>
-              <p><strong>Universe:</strong> {{ campaign.universe }}</p>
-              <p><strong>Context:</strong> {{ campaign.context }}</p>
-              <p><strong>Status:</strong> {{ campaign.progress_status | uppercase }}</p>
-              
-              <h3>Player Characters:</h3>
-              <ul>
-                <li *ngFor="let player of campaign.player_characters">
-                  <p><strong>{{ player.name }}</strong> ({{ player.class }}) - Level: {{ player.level }}</p>
-                </li>
-              </ul>
-              <div class="buttons">
-
-                <button id="updatebtn">Update</button>
-                <button id="deletebtn" (click)="deleteCampaign(campaign.id)">Delete</button>
-              </div>
-
-        </div>
-          
-    </div>
+<div>
+  <h2>Filter Campaigns by Progress Status</h2>
   
+  <!-- Sélecteur pour filtrer par statut -->
+  <label for="statusFilter">Progress Status:</label>
+  <select id="statusFilter" [(ngModel)]="selectedStatus">
+    <option value="">All</option>
+    <option value="ongoing">ongoing</option>
+    <option value="completed">completed</option>
+    <option value="in progress">draft</option>
+  </select>
+
+<!-- Liste des campagnes filtrées -->
+
+
+<div class="campaign-card">
+  
+  <div class= "card" *ngFor="let campaign of getFilteredCampaigns()">
+        <h2>{{ campaign.name }}</h2>
+        <p><strong>Description:</strong> {{ campaign.description }}</p>
+        <p><strong>Universe:</strong> {{ campaign.universe }}</p>
+        <p><strong>Context:</strong> {{ campaign.context }}</p>
+        <p><strong>Status:</strong> {{ campaign.progress_status | uppercase }}</p>
+          
+        <h3>Player Characters:</h3>
+        <ul>
+          <li *ngFor="let player of campaign.player_characters">
+            <p><strong>{{ player.name }}</strong> ({{ player.class }}) - Level: {{ player.level }}</p>
+          </li>
+        </ul>
+        <div class="buttons">
+          <button id="updatebtn">Update</button>
+          <button id="deletebtn" (click)="deleteCampaign(campaign.id)">Delete</button>
+        </div>
+
+  </div>
+    
+</div>

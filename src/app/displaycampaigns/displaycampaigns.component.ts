@@ -1,14 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { CampaignService } from '../services/campaign.service';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-displaycampaigns',
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './displaycampaigns.component.html',
   styleUrl: './displaycampaigns.component.css'
 })
 export class DisplaycampaignsComponent implements OnInit {
+
+  selectedStatus: string = ''; // Statut de progression sélectionné
   campaigns: any[] = []; // Liste des campagnes
 
   constructor(private campaignService: CampaignService) {}
@@ -38,5 +41,11 @@ export class DisplaycampaignsComponent implements OnInit {
     }
   }
 
+  getFilteredCampaigns() {
+    if (!this.selectedStatus) {
+      return this.campaigns; // Pas de filtre, afficher tout
+    }
+    return this.campaigns.filter(campaign => campaign.progress_status.toLowerCase() == this.selectedStatus.toLocaleLowerCase());
+  }
 
 }
