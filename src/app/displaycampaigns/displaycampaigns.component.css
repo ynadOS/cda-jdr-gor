@@ -1,5 +1,23 @@
+
 .campaign-card {
+    margin-top: 30px;
     display: flex;
-    justify-content: flex-start;
-    
+    flex-wrap: wrap ;
+    justify-content: center;
+    gap: 20px;
+} 
+
+.card {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #FFCC00;
+    border-radius: 10px;
+}
+
+p {
+    color: #584F2E;
+    margin: 0;
+    padding: 0;
 }

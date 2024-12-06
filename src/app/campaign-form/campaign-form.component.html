@@ -1,0 +1,68 @@
+<form [formGroup]="campaignForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Nom de la campagne</label>
+      <input id="name" formControlName="name" />
+      <div *ngIf="campaignForm.get('name')?.invalid && campaignForm.get('name')?.touched">
+        Le nom est requis.
+      </div>
+    </div>
+  
+    <div>
+      <label for="description">Description</label>
+      <textarea id="description" formControlName="description"></textarea>
+      <div *ngIf="campaignForm.get('description')?.invalid && campaignForm.get('description')?.touched">
+        La description est requise.
+      </div>
+    </div>
+  
+    <div>
+      <label for="universe">Univers</label>
+      <input id="universe" formControlName="universe" />
+      <div *ngIf="campaignForm.get('universe')?.invalid && campaignForm.get('universe')?.touched">
+        L'univers est requis.
+      </div>
+    </div>
+  
+    <div>
+      <label for="context">Contexte</label>
+      <textarea id="context" formControlName="context"></textarea>
+      <div *ngIf="campaignForm.get('context')?.invalid && campaignForm.get('context')?.touched">
+        Le contexte est requis.
+      </div>
+    </div>
+  
+    <div>
+      <label for="progressStatus">Statut</label>
+      <select id="progressStatus" formControlName="progressStatus">
+        <option value="ongoing">ongoing</option>
+        <option value="completed">completed</option>
+        <option value="in progress">draft</option>
+      </select>
+      <div *ngIf="campaignForm.get('progressStatus')?.invalid && campaignForm.get('progressStatus')?.touched">
+        Le statut est requis.
+      </div>
+    </div>
+  
+    <div formArrayName="playerCharacters">
+      <h3>Personnages</h3>
+      <div *ngFor="let character of playerCharacters.controls; let i = index" [formGroupName]="i">
+        <div>
+          <label for="name">Nom</label>
+          <input id="name" formControlName="name" />
+        </div>
+        <div>
+          <label for="class">Classe</label>
+          <input id="class" formControlName="class" />
+        </div>
+        <div>
+          <label for="level">Niveau</label>
+          <input id="level" type="number" formControlName="level" />
+        </div>
+        <button type="button" (click)="removePlayerCharacter(i)">Supprimer</button>
+      </div>
+      <button type="button" (click)="addPlayerCharacter()">Ajouter un personnage</button>
+    </div>
+  
+    <button type="submit" [disabled]="campaignForm.invalid">Soumettre</button>
+  </form>
+  

@@ -1,85 +1,299 @@
 {
   "campaigns": [
-      {
+    {
+      "id": "1",
+      "name": "Adventure in the CDA",
+      "description": "A campaign in a cyberpunk universe where players navigate between the real world and the CDA.",
+      "universe": "Cyberpunk",
+      "context": "A dystopian future where technology and virtual reality dominate.",
+      "progress_status": "ongoing",
+      "player_characters": [
+        {
           "id": 1,
-          "name": "Adventure in the CDA",
-          "description": "A campaign in a cyberpunk universe where players navigate between the real world and the CDA.",
-          "universe": "Cyberpunk",
-          "context": "A dystopian future where technology and virtual reality dominate.",
-          "quests": {
-              "main": [
-                  {
-                      "id": 1,
-                      "name": "Network Infiltration",
-                      "description": "Infiltrate the data network of a corrupt corporation to obtain sensitive information."
-                  },
-                  {
-                      "id": 2,
-                      "name": "Saved by Technology",
-                      "description": "Use technology to rescue an ally trapped in a defective virtual reality."
-                  }
-              ],
-              "side": [
-                  {
-                      "id": 1,
-                      "name": "Street Espionage",
-                      "description": "Monitor a street filled with hackers and security agents."
-                  }
-              ]
-          },
-          "progress_status": "ongoing",
-          "player_characters": [
-              {
-                  "id": 1,
-                  "name": "Neo",
-                  "class": "Hacker",
-                  "level": 5
-              },
-              {
-                  "id": 2,
-                  "name": "Trinity",
-                  "class": "Warrior",
-                  "level": 4
-              }
-          ]
-      },
-      {
+          "name": "Neo",
+          "class": "Hacker",
+          "level": 5
+        },
+        {
           "id": 2,
-          "name": "The Mysteries of the Kingdom",
-          "description": "A medieval fantasy campaign full of magic, mythological creatures, and mysteries to solve.",
-          "universe": "Medieval Fantasy",
-          "context": "A magical kingdom where adventurers explore dungeons and face supernatural creatures.",
-          "quests": {
-              "main": [
-                  {
-                      "id": 1,
-                      "name": "The Secret of the Ancients",
-                      "description": "Uncover the mysterious origin of an ancient artifact that could change the course of history."
-                  }
-              ],
-              "side": [
-                  {
-                      "id": 1,
-                      "name": "Beast Hunter",
-                      "description": "Hunt down a werewolf terrorizing nearby villages."
-                  }
-              ]
-          },
-          "progress_status": "completed",
-          "player_characters": [
-              {
-                  "id": 1,
-                  "name": "Aragorn",
-                  "class": "Ranger",
-                  "level": 6
-              },
-              {
-                  "id": 2,
-                  "name": "Gandalf",
-                  "class": "Wizard",
-                  "level": 8
-              }
-          ]
-      }
+          "name": "Trinity",
+          "class": "Warrior",
+          "level": 4
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "The Mysteries of the Kingdom",
+      "description": "A medieval fantasy campaign full of magic, mythological creatures, and mysteries to solve.",
+      "universe": "Medieval Fantasy",
+      "context": "A magical kingdom where adventurers explore dungeons and face supernatural creatures.",
+      "progress_status": "completed",
+      "player_characters": [
+        {
+          "id": 1,
+          "name": "Aragorn",
+          "class": "Ranger",
+          "level": 6
+        },
+        {
+          "id": 2,
+          "name": "Gandalf",
+          "class": "Wizard",
+          "level": 8
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Space Wars: Galactic Conquest",
+      "description": "In a vast galaxy, players take on the role of military commanders fighting for control of key planets.",
+      "universe": "Sci-Fi",
+      "context": "A futuristic galaxy at war with advanced technology, starships, and alien species.",
+      "progress_status": "ongoing",
+      "player_characters": [
+        {
+          "id": 1,
+          "name": "Captain Orion",
+          "class": "Commander",
+          "level": 7
+        },
+        {
+          "id": 2,
+          "name": "Lieutenant Vega",
+          "class": "Engineer",
+          "level": 5
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Pirates of the Lost Seas",
+      "description": "A pirate-themed campaign where players search for a legendary treasure hidden on a mythical island.",
+      "universe": "Pirate Adventure",
+      "context": "A world of pirate ships, treasure hunting, and battles on the high seas.",
+      "progress_status": "in progress",
+      "player_characters": [
+        {
+          "id": 1,
+          "name": "Captain Blackbeard",
+          "class": "Pirate",
+          "level": 8
+        },
+        {
+          "id": 2,
+          "name": "First Mate Scarlett",
+          "class": "Navigator",
+          "level": 6
+        }
+      ]
+    },
+    {
+      "id": "ed99",
+      "name": "Adventure in the CDDDDDDDDDA",
+      "description": "A campaign in a cyberpunk universe where players navigate between the real world and the CDA.",
+      "universe": "Cyberpunk",
+      "context": "A dystopian future where technology and virtual reality dominate.",
+      "progress_status": "ongoing",
+      "player_characters": [
+        {
+          "id": 1,
+          "name": "SODANY",
+          "class": "Hacker",
+          "level": 5
+        },
+        {
+          "id": 2,
+          "name": "Trinity",
+          "class": "Warrior",
+          "level": 4
+        }
+      ]
+    },
+    {
+      "id": "e845",
+      "name": "Adventure in the CDDDDDDDDDA",
+      "description": "A campaign in a cyberpunk universe where players navigate between the real world and the CDA.",
+      "universe": "Cyberpunk",
+      "context": "A dystopian future where technology and virtual reality dominate.",
+      "progress_status": "ongoing",
+      "player_characters": [
+        {
+          "name": "SODANY",
+          "class": "Hacker",
+          "level": 5
+        },
+        {
+          "name": "Trinity",
+          "class": "Warrior",
+          "level": 4
+        }
+      ]
+    },
+    {
+      "id": "7674",
+      "name": "Adventure in the CDDDDDDDDDA",
+      "description": "A campaign in a cyberpunk universe where players navigate between the real world and the CDA.",
+      "universe": "Cyberpunk",
+      "context": "A dystopian future where technology and virtual reality dominate.",
+      "progress_status": "ongoing",
+      "player_characters": [
+        {
+          "id": 1,
+          "name": "SODANY",
+          "class": "Hacker",
+          "level": 5
+        },
+        {
+          "id": 2,
+          "name": "Trinity",
+          "class": "Warrior",
+          "level": 4
+        }
+      ]
+    },
+    {
+      "id": "4b8b",
+      "name": "Adventure in the CDDDDDDDDDA",
+      "description": "A campaign in a cyberpunk universe where players navigate between the real world and the CDA.",
+      "universe": "Cyberpunk",
+      "context": "A dystopian future where technology and virtual reality dominate.",
+      "progress_status": "ongoing",
+      "player_characters": [
+        {
+          "id": 1,
+          "name": "SODANY",
+          "class": "Hacker",
+          "level": 5
+        }
+      ]
+    },
+    {
+      "id": "aac4",
+      "name": "Adventure in the CDDDDDDDDDA",
+      "description": "A campaign in a cyberpunk universe where players navigate between the real world and the CDA.",
+      "universe": "Cyberpunk",
+      "context": "A dystopian future where technology and virtual reality dominate.",
+      "progress_status": "ongoing",
+      "player_characters": [
+        {
+          "id": 1,
+          "name": "SODANY",
+          "class": "Hacker",
+          "level": 5
+        },
+        {
+          "id": 1,
+          "name": "SODANY",
+          "class": "Hacker",
+          "level": 5
+        },
+        {
+          "id": 1,
+          "name": "SODANY",
+          "class": "Hacker",
+          "level": 5
+        },
+        {
+          "id": 1,
+          "name": "SODANY",
+          "class": "Hacker",
+          "level": 5
+        },
+        {
+          "id": 1,
+          "name": "SODANY",
+          "class": "Hacker",
+          "level": 5
+        }
+      ]
+    }
+  ],
+  "quests": [
+    {
+      "id": "1",
+      "campaign_id": 1,
+      "type": "main",
+      "name": "Network Infiltration",
+      "description": "Infiltrate the data network of a corrupt corporation to obtain sensitive information."
+    },
+    {
+      "id": "2",
+      "campaign_id": 1,
+      "type": "main",
+      "name": "Saved by Technology",
+      "description": "Use technology to rescue an ally trapped in a defective virtual reality."
+    },
+    {
+      "id": "3",
+      "campaign_id": 1,
+      "type": "side",
+      "name": "Street Espionage",
+      "description": "Monitor a street filled with hackers and security agents."
+    },
+    {
+      "id": "4",
+      "campaign_id": 2,
+      "type": "main",
+      "name": "The Secret of the Ancients",
+      "description": "Uncover the mysterious origin of an ancient artifact that could change the course of history."
+    },
+    {
+      "id": "5",
+      "campaign_id": 2,
+      "type": "side",
+      "name": "Beast Hunter",
+      "description": "Hunt down a werewolf terrorizing nearby villages."
+    },
+    {
+      "id": "6",
+      "campaign_id": 3,
+      "type": "main",
+      "name": "Conquest of the Red Planet",
+      "description": "Establish control over the Red Planet and defend it against enemy forces."
+    },
+    {
+      "id": "7",
+      "campaign_id": 3,
+      "type": "side",
+      "name": "Alien Negotiations",
+      "description": "Negotiate a peace treaty with the alien species to avoid war."
+    },
+    {
+      "id": "8",
+      "campaign_id": 4,
+      "type": "main",
+      "name": "The Treasure Map",
+      "description": "Follow the clues on an ancient treasure map to find the legendary treasure."
+    },
+    {
+      "id": "9",
+      "campaign_id": 4,
+      "type": "side",
+      "name": "Sea Battle",
+      "description": "Engage in a battle with rival pirate ships over treasure."
+    },
+    {
+      "id": "5aaa",
+      "name": "Adventure in the CDDDDDDDDDA",
+      "description": "A campaign in a cyberpunk universe where players navigate between the real world and the CDA.",
+      "universe": "Cyberpunk",
+      "context": "A dystopian future where technology and virtual reality dominate.",
+      "progress_status": "ongoing",
+      "player_characters": [
+        {
+          "id": 1,
+          "name": "SODANY",
+          "class": "Hacker",
+          "level": 5
+        },
+        {
+          "id": 2,
+          "name": "Trinity",
+          "class": "Warrior",
+          "level": 4
+        }
+      ]
+    }
   ]
 }
