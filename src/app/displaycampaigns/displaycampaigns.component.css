@@ -52,3 +52,10 @@ p {
     border: none;
     transition: color 0.3s ease, background-color 0.3s ease;
   }
+
+  .filters {
+    display: flex;
+    justify-content: center;
+    color: #FFCC00;
+    gap: 10px;
+  }

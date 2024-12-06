@@ -26,9 +26,9 @@ export class CampaignService {
   }
 
   // Méthode pour mettre à jour une campagne existante
-  updateCampaign(id: number, campaign: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/${id}`, campaign);
-  }
+updateCampaign(id: number, campaign: any): Observable<any> {
+  return this.http.put<any>(`${this.apiUrl}/${id}`, campaign);
+}
 
   // Méthode pour supprimer une campagne
   deleteCampaign(id: number): Observable<any> {

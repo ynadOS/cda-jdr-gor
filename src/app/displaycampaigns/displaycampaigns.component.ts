@@ -2,21 +2,24 @@ import { Component, OnInit } from '@angular/core';
 import { CampaignService } from '../services/campaign.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';  // Pour naviguer vers le formulaire
 
 @Component({
   selector: 'app-displaycampaigns',
   imports: [CommonModule, FormsModule],
   templateUrl: './displaycampaigns.component.html',
-  styleUrl: './displaycampaigns.component.css'
+  styleUrls: ['./displaycampaigns.component.css']
 })
 export class DisplaycampaignsComponent implements OnInit {
 
-  selectedStatus: string = ''; // Statut de progression sélectionné
-  selectedUniverse: string = ''; // Statut de progression sélectionné
+  selectedStatus: string = '';
+  selectedUniverse: string = '';
+  campaigns: any[] = [];
 
-  campaigns: any[] = []; // Liste des campagnes
-
-  constructor(private campaignService: CampaignService) {}
+  constructor(
+    private campaignService: CampaignService,
+    private router: Router  // Injecter le Router
+  ) {}
 
   ngOnInit(): void {
     this.loadCampaigns();
@@ -43,21 +46,6 @@ export class DisplaycampaignsComponent implements OnInit {
     }
   }
 
-  // getFilteredCampaigns() {
-  //   if (!this.selectedStatus) {
-  //     return this.campaigns; // Pas de filtre, afficher tout
-  //   }
-  //   return this.campaigns.filter(campaign => campaign.progress_status.toLowerCase() == this.selectedStatus.toLocaleLowerCase());
-  // }
-
-  // getFilteredUniverse() {
-  //   if (!this.selectedUniverse) {
-  //     return this.campaigns;
-  //   }
-  //   return this.campaigns.filter(campaign => campaign.progress_Universe.toLowerCase() == this.selectedUniverse.toLocaleLowerCase());
-
-  // }
-
   getCombinedFilters(): any[] {
     return this.campaigns.filter(campaign => {
       const statusMatch = !this.selectedStatus || campaign.progress_status.toLowerCase() === this.selectedStatus.toLowerCase();
@@ -65,9 +53,15 @@ export class DisplaycampaignsComponent implements OnInit {
       return statusMatch && universeMatch;
     });
   }
-  
+
   resetFilters() {
     this.selectedStatus = '';
     this.selectedUniverse = '';
   }
+
+  editCampaign(id: number): void {
+    // Redirige vers le formulaire de création, en mode édition
+    this.router.navigate(['/campaign/create'], { queryParams: { id: id } });
+  }
 }
+  

@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
 
   <ng-template #addCampaign>
     <button (click)="onSubmit()" [disabled]="!campaignForm.valid">Create campaign</button>
@@ -23,7 +23,6 @@
     
       <div>
         <label for="universe">Universe</label>
-        <!-- <input id="universe" formControlName="universe" /> -->
         <select id="universe" formControlName="universe">
           <option value="Cyberpunk">Cyberpunk</option>
           <option value="Gothic Horror">Gothic Horror</option>
@@ -81,4 +80,62 @@
       <button type="submit" [disabled]="campaignForm.invalid">Add campaign</button>
     </form>
     
-</div>
+</div> -->
+
+<!-- Formulaire de création / mise à jour -->
+<form [formGroup]="campaignForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name</label>
+    <input id="name" formControlName="name" />
+  </div>
+  
+  <div>
+    <label for="description">Description</label>
+    <textarea id="description" formControlName="description"></textarea>
+  </div>
+
+  <div>
+    <label for="universe">Universe</label>
+    <select id="universe" formControlName="universe">
+      <option value="Cyberpunk">Cyberpunk</option>
+      <option value="Gothic Horror">Gothic Horror</option>
+      <option value="Med-Fan">Med-Fan</option>
+      <option value="Post-Apocalyptic">Post-Apocalyptic</option>
+      <option value="Steampunk">Steampunk</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="context">Context</label>
+    <input id="context" formControlName="context" />
+  </div>
+
+  <div>
+    <label for="progress_status">Progress Status</label>
+    <select id="progress_status" formControlName="progress_status">
+      <option value="ongoing">Ongoing</option>
+      <option value="completed">Completed</option>
+      <option value="draft">Draft</option>
+    </select>
+  </div>
+
+  <div formArrayName="player_characters">
+    <div *ngFor="let character of player_characters.controls; let i = index" [formGroupName]="i">
+      <label for="name">Character Name</label>
+      <input formControlName="name" />
+
+      <label for="class">Class</label>
+      <input formControlName="class" />
+
+      <label for="level">Level</label>
+      <input formControlName="level" type="number" />
+      
+      <button type="button" (click)="removePlayerCharacter(i)">Remove</button>
+    </div>
+    <button type="button" (click)="addPlayerCharacter()">Add Player Character</button>
+  </div>
+
+  <button type="submit" [disabled]="campaignForm.invalid">
+    {{ isEditMode ? 'Update Campaign' : 'Create Campaign' }}
+  </button>
+</form>
