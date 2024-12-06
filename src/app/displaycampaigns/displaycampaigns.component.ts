@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 export class DisplaycampaignsComponent implements OnInit {
 
   selectedStatus: string = ''; // Statut de progression sélectionné
+  selectedUniverse: string = ''; // Statut de progression sélectionné
+
   campaigns: any[] = []; // Liste des campagnes
 
   constructor(private campaignService: CampaignService) {}
@@ -41,11 +43,31 @@ export class DisplaycampaignsComponent implements OnInit {
     }
   }
 
-  getFilteredCampaigns() {
-    if (!this.selectedStatus) {
-      return this.campaigns; // Pas de filtre, afficher tout
-    }
-    return this.campaigns.filter(campaign => campaign.progress_status.toLowerCase() == this.selectedStatus.toLocaleLowerCase());
-  }
+  // getFilteredCampaigns() {
+  //   if (!this.selectedStatus) {
+  //     return this.campaigns; // Pas de filtre, afficher tout
+  //   }
+  //   return this.campaigns.filter(campaign => campaign.progress_status.toLowerCase() == this.selectedStatus.toLocaleLowerCase());
+  // }
 
+  // getFilteredUniverse() {
+  //   if (!this.selectedUniverse) {
+  //     return this.campaigns;
+  //   }
+  //   return this.campaigns.filter(campaign => campaign.progress_Universe.toLowerCase() == this.selectedUniverse.toLocaleLowerCase());
+
+  // }
+
+  getCombinedFilters(): any[] {
+    return this.campaigns.filter(campaign => {
+      const statusMatch = !this.selectedStatus || campaign.progress_status.toLowerCase() === this.selectedStatus.toLowerCase();
+      const universeMatch = !this.selectedUniverse || campaign.universe.toLowerCase() === this.selectedUniverse.toLowerCase();
+      return statusMatch && universeMatch;
+    });
+  }
+  
+  resetFilters() {
+    this.selectedStatus = '';
+    this.selectedUniverse = '';
+  }
 }

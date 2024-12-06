@@ -26,7 +26,7 @@
       "id": "2",
       "name": "The Mysteries of the Kingdom",
       "description": "A medieval fantasy campaign full of magic, mythological creatures, and mysteries to solve.",
-      "universe": "Medieval Fantasy",
+      "universe": "Med-Fan",
       "context": "A magical kingdom where adventurers explore dungeons and face supernatural creatures.",
       "progress_status": "completed",
       "player_characters": [
@@ -48,7 +48,7 @@
       "id": "3",
       "name": "Space Wars: Galactic Conquest",
       "description": "In a vast galaxy, players take on the role of military commanders fighting for control of key planets.",
-      "universe": "Sci-Fi",
+      "universe": "Cyberpunk",
       "context": "A futuristic galaxy at war with advanced technology, starships, and alien species.",
       "progress_status": "ongoing",
       "player_characters": [
@@ -89,28 +89,6 @@
       ]
     },
     {
-      "id": "ed99",
-      "name": "Adventure in the 0000DDA",
-      "description": "A campaign in a cyberpunk universe where players navigate between the real world and the CDA.",
-      "universe": "Cyberpunk",
-      "context": "A dystopian future where technology and virtual reality dominate.",
-      "progress_status": "ongoing",
-      "player_characters": [
-        {
-          "id": 1,
-          "name": "SODANY",
-          "class": "Hacker",
-          "level": 5
-        },
-        {
-          "id": 2,
-          "name": "Trinity",
-          "class": "Warrior",
-          "level": 4
-        }
-      ]
-    },
-    {
       "id": "e845",
       "name": "Adventure in the CDDDDDDDDDA",
       "description": "A campaign in a cyberpunk universe where players navigate between the real world and the CDA.",
@@ -134,7 +112,7 @@
       "id": "7674",
       "name": "Adventure in the CDDDDDDDDDA",
       "description": "A campaign in a cyberpunk universe where players navigate between the real world and the CDA.",
-      "universe": "Cyberpunk",
+      "universe": "Gothic Horror",
       "context": "A dystopian future where technology and virtual reality dominate.",
       "progress_status": "ongoing",
       "player_characters": [
@@ -149,62 +127,6 @@
           "name": "Trinity",
           "class": "Warrior",
           "level": 4
-        }
-      ]
-    },
-    {
-      "id": "4b8b",
-      "name": "Adventure in the CDDDDDDDDDA",
-      "description": "A campaign in a cyberpunk universe where players navigate between the real world and the CDA.",
-      "universe": "Cyberpunk",
-      "context": "A dystopian future where technology and virtual reality dominate.",
-      "progress_status": "ongoing",
-      "player_characters": [
-        {
-          "id": 1,
-          "name": "SODANY",
-          "class": "Hacker",
-          "level": 5
-        }
-      ]
-    },
-    {
-      "id": "aac4",
-      "name": "Adventure in the CDDDDDDDDDA",
-      "description": "A campaign in a cyberpunk universe where players navigate between the real world and the CDA.",
-      "universe": "Cyberpunk",
-      "context": "A dystopian future where technology and virtual reality dominate.",
-      "progress_status": "ongoing",
-      "player_characters": [
-        {
-          "id": 1,
-          "name": "SODANY",
-          "class": "Hacker",
-          "level": 5
-        },
-        {
-          "id": 1,
-          "name": "SODANY",
-          "class": "Hacker",
-          "level": 5
-        },
-        {
-          "id": 1,
-          "name": "SODANY",
-          "class": "Hacker",
-          "level": 5
-        },
-        {
-          "id": 1,
-          "name": "SODANY",
-          "class": "Hacker",
-          "level": 5
-        },
-        {
-          "id": 1,
-          "name": "SODANY",
-          "class": "Hacker",
-          "level": 5
         }
       ]
     },
@@ -242,6 +164,154 @@
           "id": 1,
           "name": "Dany",
           "class": "Druide",
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": "24f8",
+      "name": "Dungeon and kitties",
+      "description": "World with tons of kitties",
+      "universe": "Post-Apocalyptic",
+      "context": "Kitties in a steampunk world",
+      "progress_status": "ongoing",
+      "player_characters": [
+        {
+          "id": 1,
+          "name": "Bruce",
+          "class": "Batman",
+          "level": 5
+        },
+        {
+          "id": 2,
+          "name": "Moggy",
+          "class": "Healer",
+          "level": 9
+        },
+        {
+          "id": 3,
+          "name": "MamaKat",
+          "class": "Thief",
+          "level": 98
+        }
+      ]
+    },
+    {
+      "id": "f071",
+      "name": "The rise of the Kingdom",
+      "description": "A rise like an other",
+      "universe": "Steampunk",
+      "context": "A king wants to have it all",
+      "progress_status": "draft",
+      "player_characters": [
+        {
+          "id": 1,
+          "name": "Sokha",
+          "class": "Sorceler",
+          "level": 128
+        }
+      ]
+    },
+    {
+      "id": "24c5",
+      "name": "The honor of the Prince",
+      "description": "A simple story",
+      "universe": "Post-Apocalyptic",
+      "context": "Nothing to say",
+      "progress_status": "draft",
+      "player_characters": [
+        {
+          "id": 1,
+          "name": "Johan",
+          "class": "Black mage",
+          "level": 99
+        }
+      ]
+    },
+    {
+      "id": "3c2f",
+      "name": "A path to CDA",
+      "description": "A long journey to become a dev",
+      "universe": "Post-Apocalyptic",
+      "context": "Post-apocalyptic background for a team of dev warriors. 18months to go",
+      "progress_status": "ongoing",
+      "player_characters": [
+        {
+          "id": 1,
+          "name": "Moukhammad",
+          "class": "Ronchonneur",
+          "level": 999999
+        },
+        {
+          "id": 2,
+          "name": "Sophie",
+          "class": "Mage blanc",
+          "level": 88
+        },
+        {
+          "id": 3,
+          "name": "Maria",
+          "class": "Chasseur",
+          "level": 128
+        },
+        {
+          "id": 4,
+          "name": "Antoine",
+          "class": "Documentaliste",
+          "level": 10
+        },
+        {
+          "id": 5,
+          "name": "Rejda",
+          "class": "Hackeuse",
+          "level": 2
+        },
+        {
+          "id": 6,
+          "name": "Mathis",
+          "class": "Lead Dev",
+          "level": 99999
+        },
+        {
+          "id": 7,
+          "name": "Josélito",
+          "class": "Programmeur",
+          "level": 77
+        },
+        {
+          "id": 8,
+          "name": "Ingrid",
+          "class": "Druidesse",
+          "level": 115
+        },
+        {
+          "id": 9,
+          "name": "Johan",
+          "class": "Speedy",
+          "level": 999
+        },
+        {
+          "id": 10,
+          "name": "Sébastien",
+          "class": "Chercheur",
+          "level": 1
+        },
+        {
+          "id": 11,
+          "name": "Gwenola",
+          "class": "Barbare",
+          "level": 83
+        },
+        {
+          "id": 12,
+          "name": "Fouziya",
+          "class": "Prêtresse",
+          "level": 18
+        },
+        {
+          "id": 13,
+          "name": "Marine",
+          "class": "Démoniste",
           "level": 1
         }
       ]
