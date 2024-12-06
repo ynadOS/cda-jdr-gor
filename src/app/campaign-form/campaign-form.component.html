@@ -1,11 +1,15 @@
 <div class="container">
 
+  <ng-template #addCampaign>
+    <button (click)="onSubmit()" [disabled]="!campaignForm.valid">Create campaign</button>
+  </ng-template>
+
   <form [formGroup]="campaignForm" (ngSubmit)="onSubmit()">
       <div>
-        <label for="name">Nom de la campagne</label>
+        <label for="name">Name</label>
         <input id="name" formControlName="name" />
         <div *ngIf="campaignForm.get('name')?.invalid && campaignForm.get('name')?.touched">
-          Le nom est requis.
+          Name is required.
         </div>
       </div>
     
@@ -13,13 +17,18 @@
         <label for="description">Description</label>
         <textarea id="description" formControlName="description"></textarea>
         <div *ngIf="campaignForm.get('description')?.invalid && campaignForm.get('description')?.touched">
-          La description est requise.
+          Description is required.
         </div>
       </div>
     
       <div>
-        <label for="universe">Univers</label>
-        <input id="universe" formControlName="universe" />
+        <label for="universe">Universe</label>
+        <!-- <input id="universe" formControlName="universe" /> -->
+        <select id="universe" formControlName="universe">
+          <option value="cyberpunk">Cyberpunk</option>
+          <option value="fantastic">Fantastic</option>
+          <option value="medfan">MedFan</option>
+        </select>
         <div *ngIf="campaignForm.get('universe')?.invalid && campaignForm.get('universe')?.touched">
           L'univers est requis.
         </div>
@@ -60,12 +69,12 @@
             <label for="level">Niveau</label>
             <input id="level" type="number" formControlName="level" />
           </div>
-          <button type="button" (click)="removePlayerCharacter(i)">Supprimer</button>
+          <button type="button" (click)="removePlayerCharacter(i)">Delete</button>
         </div>
-        <button type="button" (click)="addPlayerCharacter()">Ajouter un personnage</button>
+        <button type="button" (click)="addPlayerCharacter()">Add a char</button>
       </div>
     
-      <button type="submit" [disabled]="campaignForm.invalid">Soumettre</button>
+      <button type="submit" [disabled]="campaignForm.invalid">Add campaign</button>
     </form>
     
 </div>

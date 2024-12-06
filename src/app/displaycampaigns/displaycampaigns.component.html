@@ -15,6 +15,12 @@
                   <p><strong>{{ player.name }}</strong> ({{ player.class }}) - Level: {{ player.level }}</p>
                 </li>
               </ul>
+              <div class="buttons">
+
+                <button id="updatebtn">Update</button>
+                <button id="deletebtn" (click)="deleteCampaign(campaign.id)">Delete</button>
+              </div>
+
         </div>
           
     </div>

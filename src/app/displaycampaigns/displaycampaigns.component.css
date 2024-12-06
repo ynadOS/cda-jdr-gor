@@ -21,3 +21,34 @@ p {
     margin: 0;
     padding: 0;
 }
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#deletebtn {
+    all: unset;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #ECF0F1; /* Couleur de fond */
+    color: red; /* Couleur du texte */
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  #updatebtn {
+    all: unset;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #E27F83; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }

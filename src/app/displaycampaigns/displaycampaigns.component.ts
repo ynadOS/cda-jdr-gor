@@ -29,5 +29,14 @@ export class DisplaycampaignsComponent implements OnInit {
     );
   }
 
+  deleteCampaign(id: number): void {
+    if (confirm('THIS WILL DELETE YOUR CAMPAIGN. ARE YOU SURE YOU WANT TO DELETE?')) {
+      this.campaignService.deleteCampaign(id).subscribe(() => {
+        console.log(`Campagne avec l'ID ${id} supprimée.`);
+        this.campaigns = this.campaigns.filter((campaign) => campaign.id !== id); // Mise à jour locale
+      });
+    }
+  }
+
 
 }

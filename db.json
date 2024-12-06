@@ -90,7 +90,7 @@
     },
     {
       "id": "ed99",
-      "name": "Adventure in the CDDDDDDDDDA",
+      "name": "Adventure in the 0000DDA",
       "description": "A campaign in a cyberpunk universe where players navigate between the real world and the CDA.",
       "universe": "Cyberpunk",
       "context": "A dystopian future where technology and virtual reality dominate.",
@@ -224,72 +224,6 @@
         {
           "name": "dsq",
           "class": "fdsq",
-          "level": 1
-        }
-      ]
-    },
-    {
-      "id": "57c9",
-      "name": "fdsq",
-      "description": "fdsq",
-      "universe": "cyberpunk",
-      "context": "fdsq",
-      "progressStatus": "completed",
-      "playerCharacters": [
-        {
-          "name": "sqfdsq",
-          "class": "fdsq",
-          "level": 1
-        },
-        {
-          "name": "dsq",
-          "class": "fdsq",
-          "level": 1
-        }
-      ]
-    },
-    {
-      "id": "ddc8",
-      "name": "Angular adventure",
-      "description": "Une aventure angular",
-      "universe": "Cyberpunk",
-      "context": "Univers cyberpunk",
-      "progressStatus": "completed",
-      "playerCharacters": [
-        {
-          "name": "Sodany",
-          "class": "Guerrier",
-          "level": 10
-        }
-      ]
-    },
-    {
-      "id": "3d2e",
-      "name": "jdkfslm",
-      "description": "jklfsm",
-      "universe": "kljklm",
-      "context": "jklm",
-      "progress_status": "completed",
-      "playerCharacters": [
-        {
-          "name": "d",
-          "class": "d",
-          "level": 1
-        }
-      ]
-    },
-    {
-      "id": "8328",
-      "name": "fdsq",
-      "description": "fdsq",
-      "universe": "uuuu",
-      "context": "ddd",
-      "progress_status": "in progress",
-      "playerCharacters": [
-        {
-          "id": 1,
-          "name": "dans",
-          "class": "s",
           "level": 1
         }
       ]
