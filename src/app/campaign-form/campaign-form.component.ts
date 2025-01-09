@@ -40,7 +40,7 @@ export class CampaignFormComponent implements OnInit {
       progress_status: ['', Validators.required],
       player_characters: this.fb.array([this.createPlayerCharacter()])
     });
-    this.route.params.subscribe(params => {
+    this.route.queryParams.subscribe(params => {
       const id = params['id']; // Assurez-vous que l'ID de la campagne est fourni par la route
       if (id) {
         this.isEditMode = true;
@@ -50,7 +50,7 @@ export class CampaignFormComponent implements OnInit {
         this.isEditMode = false; // Si aucun ID, passez en mode création
       }
     });
-    
+
   
   }
 
@@ -65,15 +65,6 @@ export class CampaignFormComponent implements OnInit {
       level: [1, [Validators.required, Validators.min(1)]] // Niveau minimum 1
     });
   }
-
-  // createPlayerCharacter(): FormGroup {
-  //   return this.fb.group({
-  //     id: [1, Validators.required],              // Valeur par défaut valide
-  //     name: ['Default Name', Validators.required], // Nom par défaut
-  //     class: ['Warrior', Validators.required],    // Classe par défaut
-  //     level: [1, [Validators.required, Validators.min(1)]] // Niveau minimum valide
-  //   });
-  // }
   
     // Ajouter un personnage à l'array
     addPlayerCharacter(): void {
@@ -88,14 +79,16 @@ export class CampaignFormComponent implements OnInit {
 
   // Modifier la campagne existante
   loadCampaignData(id: number): void {
-    this.campaignService.getCampaignById(id).subscribe(campaign => {
-      this.campaignForm.setValue({
-        name: campaign.name,
-        description: campaign.description,
-        universe: campaign.universe,
-        context: campaign.context,
-        progress_status: campaign.progress_status
-      });
+    this.campaignService.getCampaignById(id).subscribe(
+      campaign => {
+        console.log('Campaign data:', campaign); // Vérifiez les données reçues
+        this.campaignForm.patchValue({
+          name: campaign.name,
+          description: campaign.description,
+          universe: campaign.universe,
+          context: campaign.context,
+          progress_status: campaign.progress_status
+        });
 
       // Remplir le tableau des personnages joueurs
       const playerCharacters = campaign.player_characters || [];
