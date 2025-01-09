@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { CampaignService } from '../services/campaign.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
+
 interface Player {
   id: number;
   name: string;
@@ -26,11 +27,25 @@ export class CampaignFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private campaignService: CampaignService,
-    private router: ActivatedRoute  // Injecter le Router
+    private route: ActivatedRoute, // Injecter le Router
+    private router: Router // Router à utiliser pour la navigation après la soumission
+
 
   ) {}
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      const id = params['id']; // Assurez-vous que l'ID de la campagne est fourni par la route
+      if (id) {
+        this.isEditMode = true;
+        this.currentCampaignId = id;
+        this.loadCampaignData(id); // Chargez les données existantes de la campagne
+      } else {
+        this.isEditMode = false; // Si aucun ID, passez en mode création
+      }
+    });
+    
+  
     this.campaignForm = this.fb.group({
       name: ['', Validators.required],
       description: ['', Validators.required],
@@ -39,6 +54,8 @@ export class CampaignFormComponent implements OnInit {
       progress_status: ['', Validators.required],
       player_characters: this.fb.array([this.createPlayerCharacter()])
     });
+
+    
   }
 
   get player_characters(): FormArray {
@@ -47,17 +64,19 @@ export class CampaignFormComponent implements OnInit {
 
   createPlayerCharacter(): FormGroup {
     return this.fb.group({
-      id: ['', Validators.required],
-      name: ['', Validators.required],
-      class: ['', Validators.required],
-      level: [1, [Validators.required, Validators.min(1)]]
+      id: ['', Validators.required],  // L'identifiant ne doit pas être vide
+      name: ['', Validators.required], // Le nom est obligatoire
+      class: ['', Validators.required], // La classe est obligatoire
+      level: [1, [Validators.required, Validators.min(1)]] // Niveau minimum 1
     });
   }
+  
 
   // Ajouter un personnage à l'array
-  addPlayerCharacter(): void {
-    this.player_characters.push(this.createPlayerCharacter());
-  }
+addPlayerCharacter(): void {
+  this.player_characters.push(this.createPlayerCharacter());
+}
+
 
   // Supprimer un personnage de l'array
   removePlayerCharacter(index: number): void {
@@ -89,18 +108,40 @@ export class CampaignFormComponent implements OnInit {
 
   // Soumettre le formulaire
   onSubmit(): void {
+    console.log('Form submitted');  // Log pour vérifier si la soumission est appelée
+    console.log(this.campaignForm.valid);  // Vérifie si le formulaire est valide
+    
     if (this.campaignForm.valid) {
-      if (this.isEditMode) {
-        // Si on est en mode édition, mettre à jour la campagne
-        this.campaignService.updateCampaign(this.currentCampaignId!, this.campaignForm.value).subscribe(() => {
-          console.log('Campagne mise à jour');
-        });
+      console.log('Form data:', this.campaignForm.value);  // Log des données envoyées
+      if (this.isEditMode && this.currentCampaignId !== null) {
+        // Mise à jour d'une campagne existante
+        this.campaignService.updateCampaign(this.currentCampaignId, this.campaignForm.value).subscribe(
+          () => {
+            console.log('Campagne mise à jour avec succès');
+            this.router.navigate(['/campaigns']);  // Redirection vers la liste des campagnes après mise à jour
+          },
+          (error) => {
+            console.error('Erreur lors de la mise à jour de la campagne:', error);
+            alert('Erreur lors de la mise à jour de la campagne.');
+          }
+        );
       } else {
-        // Sinon, créer une nouvelle campagne
-        this.campaignService.addCampaign(this.campaignForm.value).subscribe(() => {
-          console.log('Campagne créée');
-        });
+        // Création d'une nouvelle campagne
+        this.campaignService.addCampaign(this.campaignForm.value).subscribe(
+          () => {
+            console.log('Campagne créée avec succès');
+            this.router.navigate(['/campaigns']);  // Redirection vers la liste des campagnes après création
+          },
+          (error) => {
+            console.error('Erreur lors de la création de la campagne:', error);
+            alert('Erreur lors de la création de la campagne.');
+          }
+        );
       }
+    } else {
+      console.log('Form invalid');
     }
   }
+    
+  
 }

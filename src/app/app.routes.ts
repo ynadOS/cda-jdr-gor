@@ -11,10 +11,11 @@ export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'campaign/create', component: CreatecampaignpageComponent },
   { 
-    path: 'campaign', 
-    component: CampaignComponent,
+    path: 'campaign', component: CampaignComponent,
     children: [
+      { path: '', component: DisplaycampaignsComponent }, // Affiche toutes les campagnes sur la page Campagnes
       { path: 'create', component: CreatecampaignpageComponent },
       { path: 'display', component: DisplaycampaignsComponent }
     ]

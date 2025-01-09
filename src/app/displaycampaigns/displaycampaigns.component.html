@@ -20,8 +20,8 @@
         <option value="Post-Apocalyptic">Post-Apocalyptic</option>
         <option value="Steampunk">Steampunk</option>
       </select>
-      <button (click)="resetFilters()">Reset the filters</button>
-      </div>
+      <button [disabled]="!selectedStatus && !selectedUniverse" (click)="resetFilters()">Reset the filters</button>
+    </div>
     
   
 

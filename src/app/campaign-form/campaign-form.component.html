@@ -1,87 +1,3 @@
-<!-- <div class="container">
-
-  <ng-template #addCampaign>
-    <button (click)="onSubmit()" [disabled]="!campaignForm.valid">Create campaign</button>
-  </ng-template>
-
-  <form [formGroup]="campaignForm" (ngSubmit)="onSubmit()">
-      <div>
-        <label for="name">Name</label>
-        <input id="name" formControlName="name" />
-        <div *ngIf="campaignForm.get('name')?.invalid && campaignForm.get('name')?.touched">
-          Name is required.
-        </div>
-      </div>
-    
-      <div>
-        <label for="description">Description</label>
-        <textarea id="description" formControlName="description"></textarea>
-        <div *ngIf="campaignForm.get('description')?.invalid && campaignForm.get('description')?.touched">
-          Description is required.
-        </div>
-      </div>
-    
-      <div>
-        <label for="universe">Universe</label>
-        <select id="universe" formControlName="universe">
-          <option value="Cyberpunk">Cyberpunk</option>
-          <option value="Gothic Horror">Gothic Horror</option>
-          <option value="Med-Fan">Med-Fan</option>
-          <option value="Post-Apocalyptic">Post-Apocalyptic</option>
-          <option value="Steampunk">Steampunk</option>
-
-
-        </select>
-        <div *ngIf="campaignForm.get('universe')?.invalid && campaignForm.get('universe')?.touched">
-          L'univers est requis.
-        </div>
-      </div>
-    
-      <div>
-        <label for="context">Contexte</label>
-        <textarea id="context" formControlName="context"></textarea>
-        <div *ngIf="campaignForm.get('context')?.invalid && campaignForm.get('context')?.touched">
-          Le contexte est requis.
-        </div>
-      </div>
-    
-      <div>
-        <label for="progress_status">Statut</label>
-        <select id="progress_status" formControlName="progress_status">
-          <option value="ongoing">Ongoing</option>
-          <option value="completed">Oompleted</option>
-          <option value="draft">Draft</option>
-        </select>
-        <div *ngIf="campaignForm.get('progress_status')?.invalid && campaignForm.get('progress_status')?.touched">
-          Le statut est requis.
-        </div>
-      </div>
-    
-      <div formArrayName="player_characters">
-        <h3>Personnages</h3>
-        <div *ngFor="let character of player_characters.controls; let i = index" [formGroupName]="i">
-          <div>
-            <label for="name">Nom</label>
-            <input id="name" formControlName="name" />
-          </div>
-          <div>
-            <label for="class">Classe</label>
-            <input id="class" formControlName="class" />
-          </div>
-          <div>
-            <label for="level">Niveau</label>
-            <input id="level" type="number" formControlName="level" />
-          </div>
-          <button type="button" (click)="removePlayerCharacter(i)">Delete</button>
-        </div>
-        <button type="button" (click)="addPlayerCharacter()">Add a char</button>
-      </div>
-    
-      <button type="submit" [disabled]="campaignForm.invalid">Add campaign</button>
-    </form>
-    
-</div> -->
-
 <!-- Formulaire de création / mise à jour -->
 <form [formGroup]="campaignForm" (ngSubmit)="onSubmit()">
   <div>
@@ -97,13 +13,15 @@
   <div>
     <label for="universe">Universe</label>
     <select id="universe" formControlName="universe">
+      <option value="" disabled selected>Select Universe</option>
+
       <option value="Cyberpunk">Cyberpunk</option>
       <option value="Gothic Horror">Gothic Horror</option>
       <option value="Med-Fan">Med-Fan</option>
       <option value="Post-Apocalyptic">Post-Apocalyptic</option>
       <option value="Steampunk">Steampunk</option>
     </select>
-  </div>
+  </div>  
 
   <div>
     <label for="context">Context</label>
@@ -113,6 +31,7 @@
   <div>
     <label for="progress_status">Progress Status</label>
     <select id="progress_status" formControlName="progress_status">
+      <option value="" disabled selected>Select status</option>
       <option value="ongoing">Ongoing</option>
       <option value="completed">Completed</option>
       <option value="draft">Draft</option>
@@ -139,3 +58,4 @@
     {{ isEditMode ? 'Update Campaign' : 'Create Campaign' }}
   </button>
 </form>
+  
