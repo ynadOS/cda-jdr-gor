@@ -29,11 +29,17 @@ export class CampaignFormComponent implements OnInit {
     private campaignService: CampaignService,
     private route: ActivatedRoute, // Injecter le Router
     private router: Router // Router à utiliser pour la navigation après la soumission
-
-
   ) {}
 
   ngOnInit(): void {
+    this.campaignForm = this.fb.group({
+      name: ['', Validators.required],
+      description: ['', Validators.required],
+      universe: ['', Validators.required],
+      context: ['', Validators.required],
+      progress_status: ['', Validators.required],
+      player_characters: this.fb.array([this.createPlayerCharacter()])
+    });
     this.route.params.subscribe(params => {
       const id = params['id']; // Assurez-vous que l'ID de la campagne est fourni par la route
       if (id) {
@@ -46,16 +52,6 @@ export class CampaignFormComponent implements OnInit {
     });
     
   
-    this.campaignForm = this.fb.group({
-      name: ['', Validators.required],
-      description: ['', Validators.required],
-      universe: ['', Validators.required],
-      context: ['', Validators.required],
-      progress_status: ['', Validators.required],
-      player_characters: this.fb.array([this.createPlayerCharacter()])
-    });
-
-    
   }
 
   get player_characters(): FormArray {
@@ -64,29 +60,36 @@ export class CampaignFormComponent implements OnInit {
 
   createPlayerCharacter(): FormGroup {
     return this.fb.group({
-      id: ['', Validators.required],  // L'identifiant ne doit pas être vide
       name: ['', Validators.required], // Le nom est obligatoire
       class: ['', Validators.required], // La classe est obligatoire
       level: [1, [Validators.required, Validators.min(1)]] // Niveau minimum 1
     });
   }
-  
 
-  // Ajouter un personnage à l'array
-addPlayerCharacter(): void {
-  this.player_characters.push(this.createPlayerCharacter());
-}
+  // createPlayerCharacter(): FormGroup {
+  //   return this.fb.group({
+  //     id: [1, Validators.required],              // Valeur par défaut valide
+  //     name: ['Default Name', Validators.required], // Nom par défaut
+  //     class: ['Warrior', Validators.required],    // Classe par défaut
+  //     level: [1, [Validators.required, Validators.min(1)]] // Niveau minimum valide
+  //   });
+  // }
+  
+    // Ajouter un personnage à l'array
+    addPlayerCharacter(): void {
+    this.player_characters.push(this.createPlayerCharacter());
+  }
 
 
   // Supprimer un personnage de l'array
-  removePlayerCharacter(index: number): void {
+    removePlayerCharacter(index: number): void {
     this.player_characters.removeAt(index);
   }
 
   // Modifier la campagne existante
   loadCampaignData(id: number): void {
     this.campaignService.getCampaignById(id).subscribe(campaign => {
-      this.campaignForm.patchValue({
+      this.campaignForm.setValue({
         name: campaign.name,
         description: campaign.description,
         universe: campaign.universe,
@@ -118,7 +121,7 @@ addPlayerCharacter(): void {
         this.campaignService.updateCampaign(this.currentCampaignId, this.campaignForm.value).subscribe(
           () => {
             console.log('Campagne mise à jour avec succès');
-            this.router.navigate(['/campaigns']);  // Redirection vers la liste des campagnes après mise à jour
+            this.router.navigate(['/campaign']);  // Redirection vers la liste des campagnes après mise à jour
           },
           (error) => {
             console.error('Erreur lors de la mise à jour de la campagne:', error);
@@ -130,7 +133,7 @@ addPlayerCharacter(): void {
         this.campaignService.addCampaign(this.campaignForm.value).subscribe(
           () => {
             console.log('Campagne créée avec succès');
-            this.router.navigate(['/campaigns']);  // Redirection vers la liste des campagnes après création
+            this.router.navigate(['/campaign']);  // Redirection vers la liste des campagnes après création
           },
           (error) => {
             console.error('Erreur lors de la création de la campagne:', error);
