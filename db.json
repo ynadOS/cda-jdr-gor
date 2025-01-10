@@ -1,7 +1,6 @@
 {
   "campaigns": [
     {
-      "id": "1",
       "name": "Adventure in the CDA",
       "description": "A campaign in a cyberpunk universe where players navigate between the real world and the CDA.",
       "universe": "Cyberpunk",
@@ -19,8 +18,14 @@
           "name": "Trinity",
           "class": "Warrior",
           "level": 4
+        },
+        {
+          "name": "dsq",
+          "class": "fdsqf",
+          "level": 1
         }
-      ]
+      ],
+      "id": "1"
     },
     {
       "name": "The Mysteries of the Kingdom",

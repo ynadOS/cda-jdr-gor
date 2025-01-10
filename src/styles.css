@@ -10,11 +10,24 @@ h1 {
     color: #E27F83;
     font-family: "Doto", sans-serif;
     text-align: center;
-  }
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    color: #E27F83;
+    text-align: center;
+}
 
 p {
     color: white;
     font-size: 18px;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+}
 

@@ -51,29 +51,42 @@
     </div>
   </div>
 
-  <div formArrayName="player_characters">
+  <div class="chars" formArrayName="player_characters">
     <div *ngFor="let character of player_characters.controls; let i = index" [formGroupName]="i">
-      <label>Character Name</label>
-      <input formControlName="name" />
-      <div *ngIf="character.get('name')?.invalid && character.get('name')?.touched">
-        <small>Name is required</small>
-      </div>
+      <div class="charsinfos">
+        <div class="charcol">
+          <label>Character Name</label>
+          <input formControlName="name" />
+          <div *ngIf="character.get('name')?.invalid && character.get('name')?.touched">
+            <small>Name is required</small>
+          </div>
+        </div>
+        <div class="charcol">
 
-      <label>Class</label>
-      <input formControlName="class" />
-      <div *ngIf="character.get('class')?.invalid && character.get('class')?.touched">
-        <small>Class is required</small>
-      </div>
+          <label>Class</label>
+          <input formControlName="class" />
+          <div *ngIf="character.get('class')?.invalid && character.get('class')?.touched">
+            <small>Class is required</small>
+          </div>
+        </div>
 
-      <label>Level</label>
-      <input formControlName="level" type="number" />
-      <div *ngIf="character.get('level')?.invalid && character.get('level')?.touched">
-        <small>Level must be at least 1</small>
+        <div class="charcol">
+
+          <label>Level</label>
+          <input formControlName="level" type="number" />
+          <div *ngIf="character.get('level')?.invalid && character.get('level')?.touched">
+            <small>Level must be at least 1</small>
+          </div>
+        </div>
+
+  
+  
       </div>
-      
-      <button type="button" (click)="removePlayerCharacter(i)">Remove</button>
+      <div class="charsbtns">
+        <button type="button" (click)="removePlayerCharacter(i)">Remove</button>
+        <button type="button" (click)="addPlayerCharacter()">Add Player Character</button>
+      </div>
     </div>
-    <button type="button" (click)="addPlayerCharacter()">Add Player Character</button>
   </div>
 
   <button type="submit" [disabled]="campaignForm.invalid">
