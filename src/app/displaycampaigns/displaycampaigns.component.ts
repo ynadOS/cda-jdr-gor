@@ -3,6 +3,7 @@ import { CampaignService } from '../services/campaign.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';  // Pour naviguer vers le formulaire
+import { NpcService } from '../services/npc.service';
 
 @Component({
   selector: 'app-displaycampaigns',
@@ -15,14 +16,17 @@ export class DisplaycampaignsComponent implements OnInit {
   selectedStatus: string = '';
   selectedUniverse: string = '';
   campaigns: any[] = [];
+  npcs: any[] = [];
 
   constructor(
     private campaignService: CampaignService,
+    private npcService: NpcService,
     private router: Router  // Injecter le Router
   ) {}
 
   ngOnInit(): void {
     this.loadCampaigns();
+    this.loadNpcs();
   }
 
   loadCampaigns(): void {
@@ -63,5 +67,32 @@ export class DisplaycampaignsComponent implements OnInit {
     // Redirige vers le formulaire de création, en mode édition
     this.router.navigate(['/campaign/create'], { queryParams: { id: id } });
   }
+
+  toggleNPCs(campaignId: number): void {
+    const campaign = this.campaigns.find(c => c.id === campaignId);
+    if (campaign) {
+      campaign.showNPCs = !campaign.showNPCs; // Basculer l'affichage des NPCs
+    }
+  }
+
+  loadNpcs(): void {
+    this.npcService.getAllNpcs().subscribe(
+      (data) => {
+        this.npcs = data;
+        console.log('NPCs chargés:', this.npcs); // Vérifier que les PNJ sont bien reçus
+      },
+      (error) => {
+        console.error('Erreur lors du chargement des NPCs:', error);
+      }
+    );
+  }
+  
+
+  getNpcsForCampaign(campaignId: string) {
+    // Filtrer les NPCs liés à la campagne
+    return this.npcs.filter(npc => npc.campaignId === campaignId);
+  }
+
+  
 }
   

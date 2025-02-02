@@ -24,14 +24,20 @@
     </div>
     
 
-<div class="campaign-card">
-  
-  <div class= "card" *ngFor="let campaign of getCombinedFilters()">
+    <div class="campaign-card">
+      
+      <div class= "card" *ngFor="let campaign of getCombinedFilters()">
         <h2>{{ campaign.name }}</h2>
         <p><strong>Description:</strong> {{ campaign.description }}</p>
         <p><strong>Universe:</strong> {{ campaign.universe }}</p>
         <p><strong>Context:</strong> {{ campaign.context }}</p>
         <p><strong>Status:</strong> {{ campaign.progress_status | uppercase }}</p>
+        <button (click)="toggleNPCs(campaign.id)">Show/hide NPCs</button>
+        <ul *ngIf="campaign.showNPCs">
+          <li *ngFor="let npc of getNpcsForCampaign(campaign.id)">
+            <p><strong>{{ npc.name }}</strong> - {{ npc.description }} (Type: {{ npc.type }})</p>
+          </li>
+        </ul>
           
         <h3>Player Characters:</h3>
         <ul>
@@ -39,6 +45,9 @@
             <p><strong>{{ player.name }}</strong> ({{ player.class }}) - Level: {{ player.level }}</p>
           </li>
         </ul>
+
+        
+
         <div class="buttons">
           <button id="updatebtn" (click)="editCampaign(campaign.id)">Update</button>
           <button id="deletebtn" (click)="deleteCampaign(campaign.id)">Delete</button>

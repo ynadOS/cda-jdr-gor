@@ -4,12 +4,18 @@ import { CommonModule } from '@angular/common';
 import { CampaignService } from '../services/campaign.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
-
 interface Player {
   id: number;
   name: string;
   class: string;
   level: number;
+}
+
+interface NPC {
+  id: number;
+  name: string;
+  role: string;
+  description: string;
 }
 
 @Component({
@@ -23,12 +29,14 @@ export class CampaignFormComponent implements OnInit {
   campaignForm!: FormGroup;
   isEditMode = false;
   currentCampaignId: number | null = null;
+  npcs: NPC[] = [];  // Liste des NPCs
+  showNPCs = false;   // Pour contrôler l'affichage des NPCs
 
   constructor(
     private fb: FormBuilder,
     private campaignService: CampaignService,
-    private route: ActivatedRoute, // Injecter le Router
-    private router: Router // Router à utiliser pour la navigation après la soumission
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -41,13 +49,13 @@ export class CampaignFormComponent implements OnInit {
       player_characters: this.fb.array([this.createPlayerCharacter()])
     });
     this.route.queryParams.subscribe(params => {
-      const id = params['id']; // Assurez-vous que l'ID de la campagne est fourni par la route
+      const id = params['id'];
       if (id) {
         this.isEditMode = true;
         this.currentCampaignId = id;
-        this.loadCampaignData(id); // Chargez les données existantes de la campagne
+        this.loadCampaignData(id);
       } else {
-        this.isEditMode = false; // Si aucun ID, passez en mode création
+        this.isEditMode = false;
       }
     });
   }
@@ -58,35 +66,29 @@ export class CampaignFormComponent implements OnInit {
 
   createPlayerCharacter(): FormGroup {
     return this.fb.group({
-      name: ['', Validators.required], // Le nom est obligatoire
-      class: ['', Validators.required], // La classe est obligatoire
-      level: [1, [Validators.required, Validators.min(1)]] // Niveau minimum 1
+      name: ['', Validators.required],
+      class: ['', Validators.required],
+      level: [1, [Validators.required, Validators.min(1)]]
     });
   }
-  
-    // Ajouter un personnage à l'array
-    addPlayerCharacter(): void {
+
+  addPlayerCharacter(): void {
     this.player_characters.push(this.createPlayerCharacter());
   }
 
-
-  // Supprimer un personnage de l'array
-    removePlayerCharacter(index: number): void {
+  removePlayerCharacter(index: number): void {
     this.player_characters.removeAt(index);
   }
 
-  // Modifier la campagne existante
   loadCampaignData(id: number): void {
-    this.campaignService.getCampaignById(id).subscribe(
-      campaign => {
-        console.log('Campaign data:', campaign); // Vérifiez les données reçues
-        this.campaignForm.patchValue({
-          name: campaign.name,
-          description: campaign.description,
-          universe: campaign.universe,
-          context: campaign.context,
-          progress_status: campaign.progress_status
-        });
+    this.campaignService.getCampaignById(id).subscribe(campaign => {
+      this.campaignForm.patchValue({
+        name: campaign.name,
+        description: campaign.description,
+        universe: campaign.universe,
+        context: campaign.context,
+        progress_status: campaign.progress_status
+      });
 
       // Remplir le tableau des personnages joueurs
       const playerCharacters = campaign.player_characters || [];
@@ -97,45 +99,40 @@ export class CampaignFormComponent implements OnInit {
         level: [player.level, [Validators.required, Validators.min(1)]]
       }));
       this.campaignForm.setControl('player_characters', this.fb.array(playerCharactersFormGroups));
+
+      // Charger les NPCs
+      this.npcs = campaign.npcs || [];
     });
   }
 
-  // Soumettre le formulaire
+  // Afficher ou masquer les NPCs
+  toggleNPCs(): void {
+    this.showNPCs = !this.showNPCs;
+  }
+
   onSubmit(): void {
-    console.log('Form submitted');  // Log pour vérifier si la soumission est appelée
-    console.log(this.campaignForm.valid);  // Vérifie si le formulaire est valide
-    
     if (this.campaignForm.valid) {
-      console.log('Form data:', this.campaignForm.value);  // Log des données envoyées
       if (this.isEditMode && this.currentCampaignId !== null) {
-        // Mise à jour d'une campagne existante
         this.campaignService.updateCampaign(this.currentCampaignId, this.campaignForm.value).subscribe(
           () => {
-            console.log('Campagne mise à jour avec succès');
-            this.router.navigate(['/campaign']);  // Redirection vers la liste des campagnes après mise à jour
+            this.router.navigate(['/campaign']);
           },
-          (error) => {
-            console.error('Erreur lors de la mise à jour de la campagne:', error);
-            alert('Erreur lors de la mise à jour de la campagne.');
+          error => {
+            console.error('Error updating campaign:', error);
+            alert('Error updating campaign.');
           }
         );
       } else {
-        // Création d'une nouvelle campagne
         this.campaignService.addCampaign(this.campaignForm.value).subscribe(
           () => {
-            console.log('Campagne créée avec succès');
-            this.router.navigate(['/campaign']);  // Redirection vers la liste des campagnes après création
+            this.router.navigate(['/campaign']);
           },
-          (error) => {
-            console.error('Erreur lors de la création de la campagne:', error);
-            alert('Erreur lors de la création de la campagne.');
+          error => {
+            console.error('Error creating campaign:', error);
+            alert('Error creating campaign.');
           }
         );
       }
-    } else {
-      console.log('Form invalid');
     }
   }
-    
-  
 }

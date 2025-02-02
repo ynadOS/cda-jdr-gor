@@ -89,6 +89,19 @@
     </div>
   </div>
 
+  
+  <div class="npcs">
+    <button type="button" (click)="toggleNPCs()">
+      {{ showNPCs ? 'Hide NPCs' : 'Show NPCs' }}
+    </button>
+
+    <div *ngIf="showNPCs">
+      <div *ngFor="let npc of npcs">
+        <p><strong>{{ npc.name }}</strong> - {{ npc.role }}: {{ npc.description }}</p>
+      </div>
+    </div>
+  </div>
+
   <button type="submit" [disabled]="campaignForm.invalid">
     {{ isEditMode ? 'Update Campaign' : 'Create Campaign' }}
   </button>

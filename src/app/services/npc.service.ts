@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class NpcService {
-  private apiUrl = 'http://localhost:3000/npc';
+  private apiUrl = 'http://localhost:3000/npcs';
 
   constructor(private http: HttpClient) {}
 
@@ -33,4 +33,9 @@ export class NpcService {
   getNpcsByCampaign(campaignId: string): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}?campaignId=${campaignId}`);
   }
+
+  addNpcToCampaign(npcId: number, campaignId: number): Observable<any> {
+    return this.http.post(`${this.apiUrl}/linkNpcToCampaign`, { npcId, campaignId });
+  }
+  
 }

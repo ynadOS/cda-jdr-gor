@@ -18,14 +18,14 @@ export class NpcFormComponent implements OnInit {
   constructor(private fb: FormBuilder, private campaignService: CampaignService, private npcService: NpcService) {}
 
   ngOnInit(): void {
-    this.npcForm = this.fb.group({
-      name: ['', Validators.required],
-      description: ['', Validators.required],
-      type: ['principal', Validators.required], // Valeur par défaut
-      location: ['', Validators.required],
-      campaignId: ['', Validators.required],
-      quests: this.fb.array([]), // Tableau dynamique pour les quêtes
-      objectives: this.fb.array([]), // Tableau dynamique pour les objectifs
+      this.npcForm = this.fb.group({
+        name: ['', Validators.required],
+        description: ['', Validators.required],
+        type: ['principal', Validators.required], // Valeur par défaut
+        location: ['', Validators.required],
+        campaignId: ['', Validators.required],
+        quests: this.fb.array([]), // Tableau dynamique pour les quêtes
+        objectives: this.fb.array([]), // Tableau dynamique pour les objectifs
     });
 
     this.loadCampaigns();
@@ -63,11 +63,16 @@ export class NpcFormComponent implements OnInit {
 
   onSubmit() {
     if (this.npcForm.invalid) return;
-
+  
     if (this.isEditMode) {
-      this.npcService.updateNpc(this.npcForm.value).subscribe();
+      this.npcService.updateNpc(this.npcForm.value).subscribe(response => {
+        console.log('NPC mis à jour !', response);
+      });
     } else {
-      this.npcService.createNpc(this.npcForm.value).subscribe();
+      this.npcService.createNpc(this.npcForm.value).subscribe(response => {
+        console.log('NPC créé !', response);
+      });
     }
   }
+  
 }

@@ -468,5 +468,107 @@
         }
       ]
     }
+  ],
+  "npcs": [
+    {
+      "id": "3cce",
+      "name": "fdsq",
+      "description": "fdsq",
+      "type": "principal",
+      "location": "dsq",
+      "campaignId": "2",
+      "quests": [],
+      "objectives": []
+    },
+    {
+      "id": "434e",
+      "name": "fdsq",
+      "description": "fdsq",
+      "type": "principal",
+      "location": "dsq",
+      "campaignId": "2",
+      "quests": [],
+      "objectives": []
+    },
+    {
+      "id": "d04f",
+      "name": "dsq",
+      "description": "fdsq",
+      "type": "principal",
+      "location": "dsq",
+      "campaignId": "1",
+      "quests": [],
+      "objectives": []
+    },
+    {
+      "id": "2f9a",
+      "name": "dfsqf",
+      "description": "fdsq",
+      "type": "principal",
+      "location": "dssss",
+      "campaignId": "1",
+      "quests": [],
+      "objectives": []
+    },
+    {
+      "id": "2a58",
+      "name": "dsq",
+      "description": "fdsq",
+      "type": "principal",
+      "location": "fdsq",
+      "campaignId": "e301",
+      "quests": [],
+      "objectives": []
+    },
+    {
+      "id": "da25",
+      "name": "dans",
+      "description": "qddsq",
+      "type": "principal",
+      "location": "dsqd",
+      "campaignId": "1",
+      "quests": [],
+      "objectives": []
+    },
+    {
+      "id": "ab38",
+      "name": "Kazim",
+      "description": "Merchant",
+      "type": "principal",
+      "location": "342.24",
+      "campaignId": "1",
+      "quests": [],
+      "objectives": []
+    },
+    {
+      "id": "2892",
+      "name": "Kazim",
+      "description": "Merchant",
+      "type": "principal",
+      "location": "342.24",
+      "campaignId": "1",
+      "quests": [],
+      "objectives": []
+    },
+    {
+      "id": "caed",
+      "name": "Kazim",
+      "description": "Merchant",
+      "type": "principal",
+      "location": "342.24",
+      "campaignId": "1",
+      "quests": [],
+      "objectives": []
+    },
+    {
+      "id": "1425",
+      "name": "Kazim",
+      "description": "Merchant",
+      "type": "principal",
+      "location": "342.24",
+      "campaignId": "1",
+      "quests": [],
+      "objectives": []
+    }
   ]
 }
