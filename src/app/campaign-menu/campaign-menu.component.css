@@ -22,6 +22,8 @@
   ul {
     list-style-type: none;  /* Retire les puces */
     padding: 0 20px;             /* Enlève le padding par défaut */
+    margin: 30px;
+
   }
   
   .nav-links li a {

@@ -21,6 +21,12 @@ h3 {
     text-align: center;
 }
 
+h4 {
+    color: #E27F83;
+    text-align: center;
+    padding: 0;
+    margin: 10px;
+} 
 p {
     color: white;
     font-size: 18px;
@@ -29,5 +35,15 @@ p {
 body {
     display: flex;
     justify-content: center;
+}
+
+select {
+    padding: 2px;
+    border: 2px solid pink;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    outline: none;
+    text-align: center;
 }
 

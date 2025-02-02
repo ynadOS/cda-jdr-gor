@@ -6,12 +6,14 @@ import { ContactComponent } from './contact/contact.component';
 import { CampaignComponent } from './campaign/campaign.component';
 import { CreatecampaignpageComponent } from './createcampaignpage/createcampaignpage.component';
 import { DisplaycampaignsComponent } from './displaycampaigns/displaycampaigns.component';
+import { NpcComponent } from './npc/npc.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'campaign/create', component: CreatecampaignpageComponent },
+  { path: 'npc', component: NpcComponent },
   { 
     path: 'campaign', component: CampaignComponent,
     children: [
@@ -19,7 +21,8 @@ export const routes: Routes = [
       { path: 'create', component: CreatecampaignpageComponent },
       { path: 'display', component: DisplaycampaignsComponent }
     ]
-  }
+  },
+
 ];
 
 @NgModule({

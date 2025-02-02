@@ -72,12 +72,11 @@
       ]
     },
     {
-      "id": "4",
       "name": "Pirates of the Lost Seas",
       "description": "A pirate-themed campaign where players search for a legendary treasure hidden on a mythical island.",
-      "universe": "Pirate Adventure",
+      "universe": "Med-Fan",
       "context": "A world of pirate ships, treasure hunting, and battles on the high seas.",
-      "progress_status": "in progress",
+      "progress_status": "ongoing",
       "player_characters": [
         {
           "id": 1,
@@ -91,7 +90,8 @@
           "class": "Navigator",
           "level": 6
         }
-      ]
+      ],
+      "id": "4"
     },
     {
       "id": "e845",
@@ -110,50 +110,6 @@
           "name": "Trinity",
           "class": "Warrior",
           "level": 4
-        }
-      ]
-    },
-    {
-      "id": "7674",
-      "name": "Adventure in the CDDDDDDDDDA",
-      "description": "A campaign in a cyberpunk universe where players navigate between the real world and the CDA.",
-      "universe": "Gothic Horror",
-      "context": "A dystopian future where technology and virtual reality dominate.",
-      "progress_status": "ongoing",
-      "player_characters": [
-        {
-          "id": 1,
-          "name": "SODANY",
-          "class": "Hacker",
-          "level": 5
-        },
-        {
-          "id": 2,
-          "name": "Trinity",
-          "class": "Warrior",
-          "level": 4
-        }
-      ]
-    },
-    {
-      "id": "3aa0",
-      "name": "Campagne test",
-      "description": "blablalba",
-      "universe": "Bonjour",
-      "context": "jklsmjklm",
-      "progress_status": "ongoing",
-      "player_characters": [
-        {
-          "id": 1,
-          "name": "Sébastien",
-          "class": "MULLE",
-          "level": 1
-        },
-        {
-          "id": 2,
-          "name": "Sokha",
-          "class": "MULLE",
-          "level": 1
         }
       ]
     },
@@ -306,73 +262,121 @@
       ]
     },
     {
-      "id": "7872",
-      "name": "salut",
-      "description": "sjfkqldsmqjfkdlsmqjf",
+      "id": "e83b",
+      "name": "Les Brumes d'Altharion",
+      "description": "Une mystérieuse brume recouvre le royaume d'Altharion, isolant les villages et rendant les routes dangereuses. Une ancienne prophétie semble liée à ces événements, et seuls les plus courageux pourront percer ce mystère.",
+      "universe": "Med-Fan",
+      "context": "Les héros doivent enquêter sur l'origine de la brume et découvrir ce qui se cache derrière les légendes d'un ancien artefact oublié.",
+      "progress_status": "ongoing",
+      "player_characters": [
+        {
+          "name": "Eliria",
+          "class": "Mage",
+          "level": 3
+        },
+        {
+          "name": "Garrik",
+          "class": "Guerrier",
+          "level": 2
+        },
+        {
+          "name": "Thalia",
+          "class": "Thalia",
+          "level": 2
+        }
+      ]
+    },
+    {
+      "id": "3cc8",
+      "name": "CyberRévolte : 2099",
+      "description": "En 2099, les mégacorporations contrôlent tout. Une équipe de mercenaires rebelles s'élève contre le système pour dévoiler des secrets qui pourraient changer le monde.\nUniverse",
       "universe": "Cyberpunk",
-      "context": "dsqfdsq",
+      "context": "Les personnages sont embauchés pour infiltrer une base de données sécurisée, mais ils découvrent des informations compromettantes sur une expérience illégale.",
       "progress_status": "ongoing",
-      "player_characters": []
+      "player_characters": [
+        {
+          "name": "Raze",
+          "class": "Hacker",
+          "level": 4
+        },
+        {
+          "name": "Kaida",
+          "class": "Samouraï de rue",
+          "level": 3
+        },
+        {
+          "name": "Nova",
+          "class": "Ingénieure de terrain",
+          "level": 5
+        }
+      ]
     },
     {
-      "id": "7d4e",
-      "name": "dsq",
-      "description": "fdsq",
-      "universe": "Gothic Horror",
-      "context": "s",
+      "id": "5a97",
+      "name": "Les Sables d'Ankharis",
+      "description": "Une cité perdue dans les sables d'un désert infini abrite une relique sacrée qui pourrait détruire ou sauver le monde. Les aventuriers doivent naviguer entre factions rivales pour atteindre leur objectif.\n",
+      "universe": "Cyberpunk",
+      "context": "Aventure antique et mythologique",
       "progress_status": "ongoing",
-      "player_characters": []
+      "player_characters": [
+        {
+          "name": "Azim",
+          "class": "Moine",
+          "level": 2
+        },
+        {
+          "name": "Lyra",
+          "class": "Archère",
+          "level": 3
+        },
+        {
+          "name": "Kael",
+          "class": "Prêtre",
+          "level": 2
+        }
+      ]
     },
     {
-      "id": "df27",
-      "name": "dsq",
-      "description": "fdsq",
-      "universe": "Gothic Horror",
-      "context": "s",
-      "progress_status": "ongoing",
-      "player_characters": []
-    },
-    {
-      "id": "41c5",
-      "name": "dsq",
-      "description": "fdsq",
-      "universe": "Gothic Horror",
-      "context": "fdsq",
+      "id": "29e5",
+      "name": "Terres Dévastées : L'Éveil des Cendres",
+      "description": "Dans un monde ravagé par une guerre nucléaire, les survivants se battent pour la survie. Des rumeurs parlent d’un bunker intact contenant des ressources et des technologies oubliées qui pourraient rebâtir la civilisation... ou la détruire définitivement.\n",
+      "universe": "Post-Apocalyptic",
+      "context": "Les personnages sont un groupe hétéroclite de survivants qui doivent traverser un désert irradié, affronter des factions hostiles et percer les secrets du bunker.",
       "progress_status": "completed",
       "player_characters": [
         {
-          "name": "fdsq",
-          "class": "fdsq",
-          "level": 1
-        }
-      ]
-    },
-    {
-      "id": "accc",
-      "name": "Sodany",
-      "description": "dsqlkfmjdsq",
-      "universe": "Med-Fan",
-      "context": "dfsq",
-      "progress_status": "ongoing",
-      "player_characters": [
+          "name": "Jax",
+          "class": "Éclaireur",
+          "level": 3
+        },
         {
-          "name": "sq",
-          "class": "fdsq",
-          "level": 1
+          "name": "Marla",
+          "class": "Médecin de fortune",
+          "level": 4
+        },
+        {
+          "name": "Kron",
+          "class": "Combattant (ancien militaire)",
+          "level": 2
+        },
+        {
+          "name": "Zeke",
+          "class": "Ingénieur mécanicien",
+          "level": 6
         }
       ]
     },
     {
-      "id": "e6f8",
-      "name": "sss",
-      "description": "ssss",
+      "id": "e301",
+      "name": "Test01",
+      "description": "Campagne de test",
       "universe": "Cyberpunk",
-      "context": "s",
+      "context": "Test",
       "progress_status": "ongoing",
       "player_characters": [
         {
-          "name": "s",
-          "class": "s",
+          "name": "Test",
+          "class": "Test",
           "level": 1
         }
       ]

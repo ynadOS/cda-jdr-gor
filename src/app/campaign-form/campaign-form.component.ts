@@ -50,8 +50,6 @@ export class CampaignFormComponent implements OnInit {
         this.isEditMode = false; // Si aucun ID, passez en mode création
       }
     });
-
-  
   }
 
   get player_characters(): FormArray {

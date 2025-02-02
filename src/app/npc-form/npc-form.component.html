@@ -1,0 +1,65 @@
+<form [formGroup]="npcForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Name</label>
+      <input id="name" formControlName="name" />
+      <div *ngIf="npcForm.get('name')?.invalid && npcForm.get('name')?.touched">
+        <small>Name is required</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="description">Description</label>
+      <textarea id="description" formControlName="description"></textarea>
+      <div *ngIf="npcForm.get('description')?.invalid && npcForm.get('description')?.touched">
+        <small>Description is required</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="type">Type</label>
+      <select id="type" formControlName="type">
+        <option value="principal">Principal</option>
+        <option value="secondaire">Secondaire</option>
+      </select>
+    </div>
+  
+    <div>
+      <label for="location">Location</label>
+      <input id="location" formControlName="location" />
+      <div *ngIf="npcForm.get('location')?.invalid && npcForm.get('location')?.touched">
+        <small>Location is required</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="campaignId">Campaign</label>
+      <select id="campaignId" formControlName="campaignId">
+        <option *ngFor="let campaign of campaigns" [value]="campaign.id">
+          {{ campaign.name }}
+        </option>
+      </select>
+    </div>
+  
+    <div>
+      <label>Quests</label>
+      <div *ngFor="let quest of quests.controls; let i = index">
+        <input [formControlName]="i" />
+        <button type="button" (click)="removeQuest(i)">Remove</button>
+      </div>
+      <button type="button" (click)="addQuest()">Add Quest</button>
+    </div>
+  
+    <div>
+      <label>Objectives</label>
+      <div *ngFor="let objective of objectives.controls; let i = index">
+        <input [formControlName]="i" />
+        <button type="button" (click)="removeObjective(i)">Remove</button>
+      </div>
+      <button type="button" (click)="addObjective()">Add Objective</button>
+    </div>
+  
+    <button type="submit" [disabled]="npcForm.invalid">
+      {{ isEditMode ? 'Update NPC' : 'Create NPC' }}
+    </button>
+  </form>
+  
