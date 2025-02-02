@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NpcService } from '../services/npc.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router } from 'express';
+import { Router } from '@angular/router';  // Pour naviguer vers le formulaire
 import { CampaignService } from '../services/campaign.service';
 
 @Component({
