@@ -8,6 +8,7 @@ import { CreatecampaignpageComponent } from './createcampaignpage/createcampaign
 import { DisplaycampaignsComponent } from './displaycampaigns/displaycampaigns.component';
 import { NpcComponent } from './npc/npc.component';
 import { DisplayNpcsComponent } from './displaynpcs/displaynpcs.component';
+import { NpcFormComponent } from './npc-form/npc-form.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,6 +18,7 @@ export const routes: Routes = [
   { path: 'npc', component: NpcComponent,
 
   },
+  { path: 'npc/create', component: NpcFormComponent },
   { 
     path: 'campaign', component: CampaignComponent,
     children: [

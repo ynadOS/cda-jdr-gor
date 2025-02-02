@@ -47,4 +47,24 @@ export class DisplayNpcsComponent implements OnInit {
   resetFilter(): void {
     this.selectedType = '';
   }
+
+  editNpc(npcId: number): void {
+    this.router.navigate(['/npc/create'], { queryParams: { id: npcId } });
+  }
+  
+  
+  deleteNpc(npcId: string) {
+    if (confirm('Are you sure you want to delete this NPC?')) {
+      this.npcService.deleteNpc(npcId).subscribe(
+        () => {
+          console.log('NPC supprimé avec succès !');
+          this.loadNpcs(); // Recharger la liste après suppression
+        },
+        (error) => {
+          console.error('Erreur lors de la suppression du NPC:', error);
+        }
+      );
+    }
+  }
+  
 }

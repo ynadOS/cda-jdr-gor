@@ -471,34 +471,14 @@
   ],
   "npcs": [
     {
-      "id": "3cce",
-      "name": "fdsq",
-      "description": "fdsq",
-      "type": "principal",
-      "location": "dsq",
-      "campaignId": "2",
-      "quests": [],
-      "objectives": []
-    },
-    {
-      "id": "434e",
-      "name": "fdsq",
-      "description": "fdsq",
-      "type": "principal",
-      "location": "dsq",
-      "campaignId": "2",
-      "quests": [],
-      "objectives": []
-    },
-    {
-      "id": "d04f",
-      "name": "dsq",
-      "description": "fdsq",
+      "name": "Mise à jour",
+      "description": "NPC UPDATEDeeee",
       "type": "principal",
       "location": "dsq",
       "campaignId": "1",
       "quests": [],
-      "objectives": []
+      "objectives": [],
+      "id": "434e"
     },
     {
       "id": "2f9a",

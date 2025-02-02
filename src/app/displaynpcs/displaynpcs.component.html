@@ -1,9 +1,11 @@
-<p>displaynpcs works!</p>
-<p *ngIf="npcs.length === 0">Aucun NPC trouvé.</p>
-
 <div class="npc-card" *ngFor="let npc of getFilteredNpcs()">
   <h3>{{ npc.name }}</h3>
   <p><strong>Description:</strong> {{ npc.description }}</p>
   <p><strong>Type:</strong> {{ npc.type }}</p>
   <p><strong>Linked Campaigns:</strong> {{ npc.campaignIds?.length || 0 }}</p>
-</div> 
+
+  <div class="buttons">
+      <button id="updatebtn" (click)="editNpc(npc.id)">Update</button>
+      <button id="deletebtn" (click)="deleteNpc(npc.id)">Delete</button>
+  </div>
+</div>
